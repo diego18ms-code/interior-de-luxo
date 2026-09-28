@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interior de Luxo — Conexões que valem a pena</title>
+<style>
+:root{--bg:#090909;--card:#151515;--gold:#d8b15a;--muted:#bdbdbd;--line:#2a2a2a}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#080808,#17130b);color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);position:sticky;top:0;background:#090909ee;backdrop-filter:blur(8px);z-index:5}
+.logo{font-family:Georgia,serif;font-size:24px;letter-spacing:1px}.logo span{color:var(--gold)}
+button{border:0;border-radius:12px;padding:13px 18px;font-weight:700;cursor:pointer}.primary{background:var(--gold);color:#111}.ghost{background:#191919;color:#fff;border:1px solid #333}
+main{max-width:1100px;margin:auto;padding:35px 18px}.hero{text-align:center;padding:55px 10px 30px}.hero h1{font-family:Georgia,serif;font-size:clamp(40px,8vw,76px);margin:10px 0}.gold{color:var(--gold)}.hero p{color:var(--muted);font-size:19px}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:35px}.card{background:linear-gradient(145deg,#181818,#101010);border:1px solid var(--line);border-radius:20px;padding:22px}.icon{font-size:35px}.card h3{margin:10px 0}.card p{color:var(--muted);line-height:1.5}
+section{margin:55px 0}.section-title{text-align:center;font-family:Georgia,serif;font-size:32px}.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.price{font-size:38px;color:var(--gold);font-weight:800}.modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center;padding:20px;z-index:10}.modal.open{display:flex}.box{background:#151515;border:1px solid #333;border-radius:20px;padding:25px;max-width:430px;width:100%}input,select,textarea{width:100%;padding:13px;margin:7px 0 12px;background:#0d0d0d;color:#fff;border:1px solid #333;border-radius:10px}.close{float:right;background:none;color:#aaa;font-size:22px;padding:0}footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:#888}
+</style>
+</head>
+<body>
+<header><div class="logo">INTERIOR <span>DE LUXO</span></div><button class="ghost" onclick="openModal()">Entrar</button></header>
+<main>
+<section class="hero"><div class="gold">CONEXÕES QUE VALEM A PENA</div><h1>Interior de <span class="gold">Luxo</span></h1><p>Uma plataforma para conhecer pessoas, criar conexões e encontrar novas histórias no interior.</p><div class="actions"><button class="primary" onclick="openModal('cadastro')">Criar minha conta</button><button class="ghost" onclick="openModal('login')">Já tenho conta</button></div></section>
+<section><h2 class="section-title">Como funciona</h2><div class="grid">
+<div class="card"><div class="icon">👤</div><h3>Crie seu perfil</h3><p>Adicione suas fotos, cidade, interesses e o que procura.</p></div>
+<div class="card"><div class="icon">❤️</div><h3>Conheça pessoas</h3><p>Descubra perfis e demonstre interesse de forma simples.</p></div>
+<div class="card"><div class="icon">💕</div><h3>Deu match!</h3><p>Quando o interesse for recíproco, vocês podem conversar.</p></div>
+</div></section>
+<section><h2 class="section-title">Interior de Luxo Premium</h2><div class="pricing">
+<div class="card"><h3>Premium</h3><div class="price">R$ 19,90<span style="font-size:15px;color:#aaa">/mês</span></div><p>✓ Curtidas ilimitadas<br>✓ Ver quem curtiu você<br>✓ Filtros avançados<br>✓ Supercurtidas<br>✓ Perfil em destaque</p><button class="primary" onclick="openModal('premium')">Quero ser Premium</button></div>
+<div class="card"><h3>Impulsionamento</h3><div class="price">R$ 4,90</div><p>Coloque seu perfil em destaque por um período determinado para aumentar sua visibilidade.</p><button class="ghost" onclick="openModal('premium')">Saiba mais</button></div>
+</div></section>
+<section><h2 class="section-title">Segurança em primeiro lugar</h2><div class="grid">
+<div class="card"><h3>🛡️ Moderação</h3><p>Ferramentas de denúncia e bloqueio para ajudar a manter a comunidade segura.</p></div>
+<div class="card"><h3>🔞 18+</h3><p>Plataforma destinada exclusivamente a maiores de 18 anos.</p></div>
+<div class="card"><h3>🔒 Privacidade</h3><p>Estrutura preparada para políticas de privacidade e adequação à LGPD.</p></div>
+</div></section>
+</main>
+<footer>© 2026 Interior de Luxo · Conexões que valem a pena</footer>
+
+<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeModal()">×</button><h2 id="modalTitle">Criar conta</h2><form onsubmit="event.preventDefault(); alert('Cadastro de demonstração realizado!'); closeModal()">
+<label>Nome</label><input required placeholder="Seu nome"><label>E-mail</label><input type="email" required placeholder="seu@email.com"><label>Data de nascimento</label><input type="date" required><label>Cidade</label><input placeholder="Sua cidade"><button class="primary" style="width:100%">Continuar</button></form></div></div>
+<script>
+function openModal(type='login'){document.getElementById('modal').classList.add('open');document.getElementById('modalTitle').textContent=type==='login'?'Entrar':type==='premium'?'Interior de Luxo Premium':'Criar minha conta'}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+</script>
+</body></html>
